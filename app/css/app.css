@@ -1,0 +1,66 @@
+/* ==================================================
+    BASE  
+    ================================================== */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+[class*="col-"] {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+body {
+    background-color: #222;
+    font-family: "Open Sans";
+}
+
+
+/* ==================================================
+    STRUCTURE GÉNÉRALE  
+    ================================================== */
+
+section {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 450px;
+    height: 525px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 1);
+}
+
+.button-user {
+    background-color: #19BF55;
+    border: 0px;
+    color: whitesmoke;
+    height: 60px;
+}
+
+.button-depenses {
+    background-color: #10AF60;
+    border: 0px;
+    color: whitesmoke;
+    height: 60px;
+}
+
+.button-user:hover {
+    background-color: #333;
+}
+
+.button-depenses:hover {
+    background-color: #333;
+}
+
+.container-app {
+    background-color: blue;
+    height: 465px;
+}

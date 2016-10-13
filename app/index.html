@@ -1,35 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>No Liability</title>
-        
-        <link rel="icon" href="img/dollar-symbol.svg">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/app.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/controller.js"></script>
-    </head>
-    
-    <body ng-app="myApp">
 
-        <section>
+<head>
+    <meta charset="UTF-8">
+    <title>No Liability</title>
 
-           <div class="switch" ng-init="SelectionContenu = true">
+    <!-- CSS -->
+    <link rel="icon" href="img/dollar-symbol.svg">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- TYPO -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- SCRIPT -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <section>
+
+        <div class="switch" ng-init="SelectionContenu = true">
             <button type="submit" class="col-md-6 button-depenses" ng-click="SelectionContenu = true">Dettes</button>
             <button type="submit" class="col-md-6 button-user" ng-click="SelectionContenu = false">Personne</button>
-            </div>
-            
-            <div class="container-app col-md-12" ng-show="SelectionContenu">
-                {{1 + 1}}
-            </div>
-               
-            <div class="container-app col-md-12" ng-hide="SelectionContenu">
-                {{5 + 5}}
-            </div>
-</section>
+        </div>
 
-    </body>
+        <div class="container-app col-md-12" ng-show="SelectionContenu">
+        </div>
+
+        <div class="container-app col-md-12" ng-hide="SelectionContenu" ng-controller="userController">
+            <div ng-controller="StyleController">
+                <div class="emplacement-dettes">
+                    <ul class="thumbnails col-md-12">
+                        <li id="{{user.username}}" class="col-md-6" ng-repeat="user in users" ng-style="CustomStyle">
+                            <h4>{{user.username}}</h4>
+                            <small>{{user.usergroup}}</small>
+                            <!--<p>{{user.usercolor}}</p>-->
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="col-md-12 btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ajouter une personne</button>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog" ng-controller="userFormController">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content col-md-6 col-md-offset-3">
+                            <div class="modal-header">
+                                <h4 class="modal-title">ajouter une personne</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="">
+                                    <input type="text" placeholder="username" class="col-md-8 col-md-offset-2" ng-model="user.username">
+                                    <input type="text" placeholder="usergroup" class="col-md-8 col-md-offset-2" ng-model="user.usergroup">
+                                    <select name="usercolor" class="col-md-8 col-md-offset-2" ng-model="BColor" ng-change="SetStyle()">
+                                        <option>Red</option>
+                                        <option>Green</option>
+                                        <option>Blue</option>
+                                        <option>Yellow</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="col-md-8 col-md-offset-2" ng-click="addUser(user)" data-dismiss="modal">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
 </html>

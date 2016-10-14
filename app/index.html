@@ -34,10 +34,10 @@
         </div>
 
         <div class="container-app col-md-12" ng-hide="SelectionContenu" ng-controller="userController">
-            <div ng-controller="StyleController">
-                <div class="emplacement-dettes">
+            <div>
+                <div class="emplacement-personnes">
                     <ul class="thumbnails col-md-12">
-                        <li id="{{user.username}}" class="col-md-6" ng-repeat="user in users" ng-style="CustomStyle">
+                        <li id="{{user.username}}" class="col-md-6" ng-repeat="user in users" ng-style="CustomStyle" style='background-color:{{user.usercolor}}'>
                             <h4>{{user.username}}</h4>
                             <small>{{user.usergroup}}</small>
                             <!--<p>{{user.usercolor}}</p>-->
@@ -59,11 +59,11 @@
                                 <form action="">
                                     <input type="text" placeholder="username" class="col-md-8 col-md-offset-2" ng-model="user.username">
                                     <input type="text" placeholder="usergroup" class="col-md-8 col-md-offset-2" ng-model="user.usergroup">
-                                    <select name="usercolor" class="col-md-8 col-md-offset-2" ng-model="BColor" ng-change="SetStyle()">
-                                        <option>Red</option>
-                                        <option>Green</option>
-                                        <option>Blue</option>
-                                        <option>Yellow</option>
+                                    <select name="usercolor" class="col-md-8 col-md-offset-2" ng-model="user.usercolor">
+                                        <option value='#0D3C76'>Bleu</option>
+                                        <option value='green'>Green</option>
+                                        <option value='blue'>Blue</option>
+                                        <option value='crimson'>Yellow</option>
                                     </select>
                                 </form>
                             </div>

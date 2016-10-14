@@ -39,44 +39,43 @@ section {
 }
 
 .button-user {
-    background-color: #19BF55;
+    background-color: #43ACC3;
     border: 0px;
     color: whitesmoke;
     height: 60px;
 }
 
 .button-depenses {
-    background-color: #10AF60;
+    background-color: #43ACC3;
     border: 0px;
     color: whitesmoke;
     height: 60px;
 }
 
 .button-user:hover {
-    background-color: #333;
+    background-color: #1D6676;
 }
 
 .button-depenses:hover {
-    background-color: #333;
+    background-color: #1D6676;
 }
 
 .container-app {
-    background-color: blue;
+    background-color: whitesmoke;
     height: 465px;
 }
 
-
 /* ==================================================
-    DETTES  
+    personnes  
     ================================================== */
 
-.emplacement-dettes {
+.emplacement-personnes {
     height: 415px;
     background-color: whitesmoke;
     overflow-y: scroll;
 }
 
-.emplacement-dettes li {
+.emplacement-personnes li {
     background-color: red;
     list-style: none;
     height: 138.3px;
@@ -85,21 +84,24 @@ section {
     align-items: center;
     justify-content: center;
     color: whitesmoke;
+    border-right: 5px solid whitesmoke;
+    border-left: 5px solid whitesmoke;
+    margin-top: 5px;
 }
 
-.emplacement-dettes h4 {
+.emplacement-personnes h4 {
     margin-top: 0px;
     margin-bottom: 5px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.emplacement-dettes small {
+.emplacement-personnes small {
     text-transform: lowercase;
 }
 
 .container-app button {
-    background-color: #19bf55;
+    background-color: #43ACC3;
     border-radius: 0px;
     height: 50px;
     border: 0px;
@@ -107,10 +109,13 @@ section {
     text-transform: uppercase;
 }
 
+.container-app button:hover {
+    background-color: #1d6676;
+}
+
 .modal-content {
     border-radius: 0px;
     margin-top: 25%;
-    ;
 }
 
 .modal-title {
@@ -124,10 +129,10 @@ section {
 
 .modal-body input,
 .modal-body select {
-    color: #10af60;
+    color: #1d6676;
     background-color: white;
     border-radius: 0px;
-    border: 1px solid #10af60;
+    border: 1px solid #43ACC3;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px;

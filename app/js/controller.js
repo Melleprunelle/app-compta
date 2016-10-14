@@ -1,10 +1,10 @@
 app.controller("userController", function ($scope) {
     $scope.users = [
         {
-            id: 1,
+            id: 0,
             username: "Exemple User",
             usergroup: "Exemple Usergroup",
-            usercolor: "Exemple Color",
+            usercolor: "#0D3C76",
         }
   ]
 });
@@ -17,13 +17,14 @@ app.controller("userFormController", function ($scope) {
 
 });
 
+/*
 app.controller("StyleController", function ($scope) {
     $scope.CustomStyle = {};
-    $scope.BColor = "Yellow";
+    $scope.BColor = "crimson";
 
     $scope.SetStyle = function () {
         $scope.CustomStyle = {
             'background-color': $scope.BColor,
         };
     }
-});
+});*/
